@@ -59,19 +59,19 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105"
             >
               Home
             </Link>
             <Link
               to="/listings"
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105"
             >
               Properties
             </Link>
             <Link
               to="/agents"
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105"
             >
               Agents
             </Link>
