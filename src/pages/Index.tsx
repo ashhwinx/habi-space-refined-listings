@@ -11,7 +11,9 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main>
-        <Hero />
+        <AnimatedSection animation="fadeIn">
+          <Hero />
+        </AnimatedSection>
         <AnimatedSection delay={100}>
           <FeaturedListings />
         </AnimatedSection>
