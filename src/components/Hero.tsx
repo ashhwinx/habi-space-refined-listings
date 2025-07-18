@@ -13,13 +13,6 @@ import { Search, MapPin } from "lucide-react";
 const Hero = () => {
   const [searchType, setSearchType] = useState("buy");
   const [location, setLocation] = useState("");
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    // Trigger entrance animation after component mounts
-    const timer = setTimeout(() => setIsLoaded(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-hero">
@@ -27,33 +20,19 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 text-center">
         {/* Main Heading */}
-        <h1
-          className={`text-4xl sm:text-5xl lg:text-6xl font-light text-foreground mb-6 leading-tight transition-all duration-800 ease-out ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-foreground mb-6 leading-tight">
           Find Your Perfect
           <span className="block font-medium text-primary">Luxury Home</span>
         </h1>
 
         {/* Subheading */}
-        <p
-          className={`text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light transition-all duration-800 ease-out ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ transitionDelay: "200ms" }}
-        >
+        <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light">
           Discover exceptional properties in the world's most desirable
           locations with our curated collection of premium real estate.
         </p>
 
         {/* Search Bar */}
-        <div
-          className={`bg-card/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-elegant border border-border/50 max-w-3xl mx-auto transition-all duration-800 ease-out ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ transitionDelay: "400ms" }}
-        >
+        <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-elegant border border-border/50 max-w-3xl mx-auto">
           <div className="flex flex-col sm:flex-row gap-4 sm:items-end">
             {/* Buy/Rent Toggle */}
             <div className="w-full sm:flex-shrink-0 sm:w-auto">
@@ -100,12 +79,7 @@ const Hero = () => {
         </div>
 
         {/* Quick Stats */}
-        <div
-          className={`grid grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-16 max-w-2xl mx-auto transition-all duration-800 ease-out ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ transitionDelay: "600ms" }}
-        >
+        <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-16 max-w-2xl mx-auto">
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-semibold text-primary mb-1 sm:mb-2">
               500+
