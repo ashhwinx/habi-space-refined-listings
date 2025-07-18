@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoadingScreen from "@/components/LoadingScreen";
+import Navigation from "@/components/Navigation";
 import useScrollToTop from "@/hooks/use-scroll-to-top";
 import Index from "./pages/Index";
 import Listings from "./pages/Listings";
@@ -64,7 +65,12 @@ const App = () => {
           }`}
         >
           <BrowserRouter>
-            <AppContent />
+            {/* Global persistent navigation */}
+            <Navigation />
+            {/* Page content with top padding to account for fixed navbar */}
+            <div className="pt-16">
+              <AppContent />
+            </div>
           </BrowserRouter>
         </div>
       </TooltipProvider>
