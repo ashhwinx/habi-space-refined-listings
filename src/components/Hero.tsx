@@ -25,13 +25,13 @@ const Hero = () => {
         </p>
 
         {/* Search Bar */}
-        <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 shadow-elegant border border-border/50 max-w-3xl mx-auto">
-          <div className="flex flex-col sm:flex-row gap-4 items-end">
+        <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-elegant border border-border/50 max-w-3xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 sm:items-end">
             {/* Buy/Rent Toggle */}
-            <div className="flex-shrink-0">
+            <div className="w-full sm:flex-shrink-0 sm:w-auto">
               <label className="text-sm font-medium text-foreground mb-2 block">Type</label>
               <Select value={searchType} onValueChange={setSearchType}>
-                <SelectTrigger className="w-[120px] h-11 border-border">
+                <SelectTrigger className="w-full sm:w-[120px] h-11 border-border">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -42,7 +42,7 @@ const Hero = () => {
             </div>
 
             {/* Location Input */}
-            <div className="flex-1">
+            <div className="flex-1 w-full">
               <label className="text-sm font-medium text-foreground mb-2 block">Location</label>
               <div className="relative">
                 <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
@@ -51,32 +51,35 @@ const Hero = () => {
                   placeholder="Enter city, neighborhood, or address"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="pl-10 h-11 border-border"
+                  className="pl-10 h-11 border-border w-full"
                 />
               </div>
             </div>
 
             {/* Search Button */}
-            <Button variant="premium" size="xl" className="sm:w-auto w-full">
-              <Search className="w-4 h-4 mr-2" />
-              Search Properties
-            </Button>
+            <div className="w-full sm:w-auto">
+              <Button variant="premium" size="xl" className="w-full sm:w-auto">
+                <Search className="w-4 h-4 mr-2" />
+                <span className="hidden sm:inline">Search Properties</span>
+                <span className="sm:hidden">Search</span>
+              </Button>
+            </div>
           </div>
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
+        <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-16 max-w-2xl mx-auto">
           <div className="text-center">
-            <div className="text-3xl font-semibold text-primary mb-2">500+</div>
-            <div className="text-sm text-muted-foreground">Premium Properties</div>
+            <div className="text-2xl sm:text-3xl font-semibold text-primary mb-1 sm:mb-2">500+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Premium Properties</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-semibold text-primary mb-2">50+</div>
-            <div className="text-sm text-muted-foreground">Expert Agents</div>
+            <div className="text-2xl sm:text-3xl font-semibold text-primary mb-1 sm:mb-2">50+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Expert Agents</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-semibold text-primary mb-2">15</div>
-            <div className="text-sm text-muted-foreground">Years Experience</div>
+            <div className="text-2xl sm:text-3xl font-semibold text-primary mb-1 sm:mb-2">15</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Years Experience</div>
           </div>
         </div>
       </div>
