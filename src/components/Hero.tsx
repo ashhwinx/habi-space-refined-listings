@@ -22,7 +22,9 @@ const Hero = () => {
     setIsLoaded(false);
 
     // Trigger entrance animation after component mounts or route changes
-    const timer = setTimeout(() => setIsLoaded(true), 100);
+    // Slightly longer delay for smooth re-animation when returning to homepage
+    const delay = location.pathname === "/" ? 150 : 100;
+    const timer = setTimeout(() => setIsLoaded(true), delay);
     return () => clearTimeout(timer);
   }, [location.pathname]); // Re-trigger when location changes
 
