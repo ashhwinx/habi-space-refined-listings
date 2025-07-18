@@ -95,7 +95,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden bg-background/95 backdrop-blur-md border-t border-border/50 absolute top-16 left-0 right-0 shadow-elegant transition-all duration-300 ease-elegant ${
+          className={`md:hidden bg-background/95 backdrop-blur-md border-t border-border/50 absolute top-16 left-0 right-0 shadow-elegant transition-all duration-300 ease-elegant z-[101] ${
             isMobileMenuOpen
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-4 pointer-events-none"
