@@ -12,7 +12,7 @@ const AnimatedSection = ({
   children,
   className = "",
   delay = 0,
-  animation = "fadeIn",
+  animation = "fadeInUp",
 }: AnimatedSectionProps) => {
   const { elementRef, isIntersecting } = useIntersectionObserver({
     threshold: 0.1,
