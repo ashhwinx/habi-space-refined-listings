@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -13,20 +12,14 @@ import { Search, MapPin } from "lucide-react";
 
 const Hero = () => {
   const [searchType, setSearchType] = useState("buy");
-  const [searchLocation, setSearchLocation] = useState("");
+  const [location, setLocation] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
-    // Reset animation state when navigating to homepage
-    setIsLoaded(false);
-
-    // Trigger entrance animation after component mounts or route changes
-    // Slightly longer delay for smooth re-animation when returning to homepage
-    const delay = location.pathname === "/" ? 150 : 100;
-    const timer = setTimeout(() => setIsLoaded(true), delay);
+    // Trigger entrance animation after component mounts
+    const timer = setTimeout(() => setIsLoaded(true), 100);
     return () => clearTimeout(timer);
-  }, [location.pathname]); // Re-trigger when location changes
+  }, []);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-hero">
@@ -88,8 +81,8 @@ const Hero = () => {
                 <Input
                   type="text"
                   placeholder="Enter city, neighborhood, or address"
-                  value={searchLocation}
-                  onChange={(e) => setSearchLocation(e.target.value)}
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
                   className="pl-10 h-11 border-border w-full"
                 />
               </div>

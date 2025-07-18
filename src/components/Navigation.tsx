@@ -38,12 +38,11 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 w-full transition-all duration-300 ease-out z-[100] ${
+      className={`fixed top-0 w-full transition-all duration-300 ease-out z-50 ${
         isScrolled
           ? "bg-background/95 backdrop-blur-lg border-b border-border/60 shadow-elegant"
           : "bg-background/80 backdrop-blur-md border-b border-border/50"
       }`}
-      style={{ position: "fixed" }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex items-center justify-between h-16">
@@ -60,19 +59,19 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
             >
               Home
             </Link>
             <Link
               to="/listings"
-              className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
             >
               Properties
             </Link>
             <Link
               to="/agents"
-              className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
             >
               Agents
             </Link>
@@ -95,7 +94,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden bg-background/95 backdrop-blur-md border-t border-border/50 absolute top-16 left-0 right-0 shadow-elegant transition-all duration-300 ease-elegant z-[101] ${
+          className={`md:hidden bg-background/95 backdrop-blur-md border-t border-border/50 absolute top-16 left-0 right-0 shadow-elegant transition-all duration-300 ease-elegant ${
             isMobileMenuOpen
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-4 pointer-events-none"
@@ -104,21 +103,21 @@ const Navigation = () => {
           <div className="px-6 py-4 space-y-4">
             <Link
               to="/"
-              className="block text-foreground hover:text-primary transition-all duration-300 font-medium py-2 hover:bg-muted/50 rounded-md px-2 -mx-2"
+              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
               onClick={closeMobileMenu}
             >
               Home
             </Link>
             <Link
               to="/listings"
-              className="block text-foreground hover:text-primary transition-all duration-300 font-medium py-2 hover:bg-muted/50 rounded-md px-2 -mx-2"
+              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
               onClick={closeMobileMenu}
             >
               Properties
             </Link>
             <Link
               to="/agents"
-              className="block text-foreground hover:text-primary transition-all duration-300 font-medium py-2 hover:bg-muted/50 rounded-md px-2 -mx-2"
+              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
               onClick={closeMobileMenu}
             >
               Agents

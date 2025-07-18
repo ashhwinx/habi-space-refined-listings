@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import FeaturedListings from "@/components/FeaturedListings";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -8,31 +7,22 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const Index = () => {
-  const [animationKey, setAnimationKey] = useState(0);
-  const location = useLocation();
-
-  useEffect(() => {
-    // Reset animations when navigating to homepage
-    if (location.pathname === "/") {
-      setAnimationKey((prev) => prev + 1);
-    }
-  }, [location.pathname]);
-
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
       <main>
         <Hero />
-        <AnimatedSection key={`featured-${animationKey}`} delay={0}>
+        <AnimatedSection delay={0}>
           <FeaturedListings />
         </AnimatedSection>
-        <AnimatedSection key={`why-choose-${animationKey}`} delay={100}>
+        <AnimatedSection delay={100}>
           <WhyChooseUs />
         </AnimatedSection>
-        <AnimatedSection key={`testimonials-${animationKey}`} delay={200}>
+        <AnimatedSection delay={200}>
           <Testimonials />
         </AnimatedSection>
       </main>
-      <AnimatedSection key={`footer-${animationKey}`} delay={300}>
+      <AnimatedSection delay={300}>
         <Footer />
       </AnimatedSection>
     </div>

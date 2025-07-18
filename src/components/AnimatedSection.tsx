@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useIntersectionObserver from "@/hooks/use-intersection-observer";
 
 interface AnimatedSectionProps {
@@ -14,37 +14,25 @@ const AnimatedSection = ({
   delay = 0,
   animation = "fadeInUp",
 }: AnimatedSectionProps) => {
-  const [shouldAnimate, setShouldAnimate] = useState(false);
   const { elementRef, isIntersecting } = useIntersectionObserver({
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
-    triggerOnce: false, // Allow re-triggering for homepage navigation
   });
-
-  useEffect(() => {
-    if (isIntersecting) {
-      // Small delay to ensure smooth re-animation
-      const timer = setTimeout(() => setShouldAnimate(true), 50);
-      return () => clearTimeout(timer);
-    } else {
-      setShouldAnimate(false);
-    }
-  }, [isIntersecting]);
 
   const getAnimationClass = () => {
     switch (animation) {
       case "fadeIn":
-        return shouldAnimate ? "animate-fadeIn" : "opacity-0";
+        return isIntersecting ? "animate-fadeIn" : "opacity-0";
       case "slideInLeft":
-        return shouldAnimate
+        return isIntersecting
           ? "animate-slideInLeft"
           : "opacity-0 -translate-x-8";
       case "slideInRight":
-        return shouldAnimate
+        return isIntersecting
           ? "animate-slideInRight"
           : "opacity-0 translate-x-8";
       default:
-        return shouldAnimate ? "animate-fadeInUp" : "opacity-0 translate-y-8";
+        return isIntersecting ? "animate-fadeInUp" : "opacity-0 translate-y-8";
     }
   };
 
