@@ -96,9 +96,7 @@ const agents = [
 const Agents = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-
-      <main className="pt-20">
+      <main>
         {/* Header Section */}
         <AnimatedSection animation="fadeIn">
           <section className="py-16 px-6 sm:px-8 bg-muted/30">
