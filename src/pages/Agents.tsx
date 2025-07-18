@@ -4,6 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Mail, MapPin, Star } from "lucide-react";
+import agentSarah from "@/assets/agent-sarah.jpg";
+import agentMichael from "@/assets/agent-michael.jpg";
+import agentElena from "@/assets/agent-elena.jpg";
+import agentDavid from "@/assets/agent-david.jpg";
+import agentAmanda from "@/assets/agent-amanda.jpg";
+import agentRobert from "@/assets/agent-robert.jpg";
 
 const agents = [
   {
@@ -17,7 +23,7 @@ const agents = [
     specialties: ["Luxury Homes", "Investment Properties", "Waterfront"],
     rating: 4.9,
     reviews: 127,
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b132?w=400&h=400&fit=crop&crop=face",
+    image: agentSarah,
   },
   {
     id: 2,
@@ -30,7 +36,7 @@ const agents = [
     specialties: ["Penthouses", "Commercial", "International"],
     rating: 5.0,
     reviews: 89,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    image: agentMichael,
   },
   {
     id: 3,
@@ -43,7 +49,7 @@ const agents = [
     specialties: ["Beachfront", "Condominiums", "New Development"],
     rating: 4.8,
     reviews: 156,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    image: agentElena,
   },
   {
     id: 4,
@@ -56,7 +62,7 @@ const agents = [
     specialties: ["Historic Properties", "Estates", "Tech Executive Homes"],
     rating: 4.9,
     reviews: 203,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    image: agentDavid,
   },
   {
     id: 5,
@@ -69,7 +75,7 @@ const agents = [
     specialties: ["Celebrity Homes", "Architectural", "Privacy Estates"],
     rating: 4.9,
     reviews: 92,
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face",
+    image: agentAmanda,
   },
   {
     id: 6,
@@ -82,7 +88,7 @@ const agents = [
     specialties: ["Waterfront", "Modern Architecture", "Tech Professionals"],
     rating: 4.8,
     reviews: 174,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+    image: agentRobert,
   },
 ];
 
