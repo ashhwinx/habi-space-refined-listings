@@ -122,9 +122,10 @@ const Listings = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <main className="pt-20">
+            <main className="pt-20">
         {/* Header Section */}
-        <section className="py-16 px-6 sm:px-8 bg-muted/30">
+        <AnimatedSection animation="fadeIn">
+          <section className="py-16 px-6 sm:px-8 bg-muted/30">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl sm:text-5xl font-light text-foreground mb-4">
