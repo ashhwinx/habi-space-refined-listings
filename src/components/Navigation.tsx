@@ -103,21 +103,21 @@ const Navigation = () => {
           <div className="px-6 py-4 space-y-4">
             <Link
               to="/"
-              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+              className="block text-foreground hover:text-primary transition-all duration-300 font-medium py-2 hover:bg-muted/50 rounded-md px-2 -mx-2"
               onClick={closeMobileMenu}
             >
               Home
             </Link>
             <Link
               to="/listings"
-              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+              className="block text-foreground hover:text-primary transition-all duration-300 font-medium py-2 hover:bg-muted/50 rounded-md px-2 -mx-2"
               onClick={closeMobileMenu}
             >
               Properties
             </Link>
             <Link
               to="/agents"
-              className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+              className="block text-foreground hover:text-primary transition-all duration-300 font-medium py-2 hover:bg-muted/50 rounded-md px-2 -mx-2"
               onClick={closeMobileMenu}
             >
               Agents
