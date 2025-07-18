@@ -1,9 +1,16 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Bed, Bath, Maximize, Filter, Search } from "lucide-react";
@@ -95,36 +102,38 @@ const Listings = () => {
 
   const handleFilter = () => {
     let filtered = allProperties;
-    
+
     if (searchLocation) {
-      filtered = filtered.filter(property =>
-        property.location.toLowerCase().includes(searchLocation.toLowerCase())
+      filtered = filtered.filter((property) =>
+        property.location.toLowerCase().includes(searchLocation.toLowerCase()),
       );
     }
-    
+
     if (propertyType !== "all") {
-      filtered = filtered.filter(property =>
-        property.type.toLowerCase().includes(propertyType)
+      filtered = filtered.filter((property) =>
+        property.type.toLowerCase().includes(propertyType),
       );
     }
-    
+
     setFilteredProperties(filtered);
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <main className="pt-20">
         {/* Header Section */}
         <section className="py-16 px-6 sm:px-8 bg-muted/30">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl sm:text-5xl font-light text-foreground mb-4">
-                Luxury <span className="font-medium text-primary">Properties</span>
+                Luxury{" "}
+                <span className="font-medium text-primary">Properties</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Discover our curated collection of exceptional homes in the world's most prestigious locations.
+                Discover our curated collection of exceptional homes in the
+                world's most prestigious locations.
               </p>
             </div>
 
@@ -132,7 +141,9 @@ const Listings = () => {
             <div className="bg-card rounded-2xl p-6 shadow-soft border border-border">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Location</label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">
+                    Location
+                  </label>
                   <div className="relative">
                     <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                     <Input
@@ -146,7 +157,9 @@ const Listings = () => {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Type</label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">
+                    Type
+                  </label>
                   <Select value={propertyType} onValueChange={setPropertyType}>
                     <SelectTrigger>
                       <SelectValue />
@@ -160,7 +173,9 @@ const Listings = () => {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Price Range</label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">
+                    Price Range
+                  </label>
                   <Select value={priceRange} onValueChange={setPriceRange}>
                     <SelectTrigger>
                       <SelectValue />
@@ -174,7 +189,11 @@ const Listings = () => {
                   </Select>
                 </div>
 
-                <Button onClick={handleFilter} variant="premium" className="w-full">
+                <Button
+                  onClick={handleFilter}
+                  variant="premium"
+                  className="w-full"
+                >
                   <Search className="w-4 h-4 mr-2" />
                   Search
                 </Button>
@@ -198,8 +217,8 @@ const Listings = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProperties.map((property, index) => (
-                <Card 
-                  key={property.id} 
+                <Card
+                  key={property.id}
                   className="group cursor-pointer border-border hover:shadow-elegant transition-all duration-500 ease-elegant hover:-translate-y-1 overflow-hidden"
                   style={{
                     animationDelay: `${index * 100}ms`,
@@ -214,8 +233,10 @@ const Listings = () => {
                       className="w-full h-64 object-cover transition-transform duration-700 ease-elegant group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
-                      <Badge 
-                        variant={property.type === "For Sale" ? "default" : "secondary"}
+                      <Badge
+                        variant={
+                          property.type === "For Sale" ? "default" : "secondary"
+                        }
                         className="text-xs font-medium"
                       >
                         {property.type}
@@ -223,7 +244,10 @@ const Listings = () => {
                     </div>
                     {property.featured && (
                       <div className="absolute top-4 right-4">
-                        <Badge variant="secondary" className="text-xs font-medium">
+                        <Badge
+                          variant="secondary"
+                          className="text-xs font-medium"
+                        >
                           Featured
                         </Badge>
                       </div>
@@ -233,8 +257,12 @@ const Listings = () => {
 
                   <CardContent className="p-6">
                     <div className="mb-3">
-                      <div className="text-2xl font-semibold text-primary mb-1">{property.price}</div>
-                      <h3 className="text-lg font-medium text-foreground mb-2">{property.title}</h3>
+                      <div className="text-2xl font-semibold text-primary mb-1">
+                        {property.price}
+                      </div>
+                      <h3 className="text-lg font-medium text-foreground mb-2">
+                        {property.title}
+                      </h3>
                       <div className="flex items-center text-muted-foreground text-sm">
                         <MapPin className="w-4 h-4 mr-1" />
                         {property.location}
