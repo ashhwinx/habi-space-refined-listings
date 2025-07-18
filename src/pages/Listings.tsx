@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
@@ -120,9 +119,7 @@ const Listings = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-
-      <main className="pt-20">
+      <main>
         {/* Header Section */}
         <AnimatedSection animation="fadeIn">
           <section className="py-16 px-6 sm:px-8 bg-muted/30">
