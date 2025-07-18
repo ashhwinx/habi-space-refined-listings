@@ -4,7 +4,6 @@ import FeaturedListings from "@/components/FeaturedListings";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-import AnimatedSection from "@/components/AnimatedSection";
 
 const Index = () => {
   return (
@@ -12,19 +11,11 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        <AnimatedSection delay={0}>
-          <FeaturedListings />
-        </AnimatedSection>
-        <AnimatedSection delay={100}>
-          <WhyChooseUs />
-        </AnimatedSection>
-        <AnimatedSection delay={200}>
-          <Testimonials />
-        </AnimatedSection>
+        <FeaturedListings />
+        <WhyChooseUs />
+        <Testimonials />
       </main>
-      <AnimatedSection delay={300}>
-        <Footer />
-      </AnimatedSection>
+      <Footer />
     </div>
   );
 };
