@@ -5,12 +5,17 @@ const useScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Smooth scroll to top when route changes
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    // Small delay to ensure route transition completes
+    const timer = setTimeout(() => {
+      // Use smooth scroll for a premium feel
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, [pathname]);
 };
 
