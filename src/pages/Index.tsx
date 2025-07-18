@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import FeaturedListings from "@/components/FeaturedListings";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -9,7 +8,6 @@ import AnimatedSection from "@/components/AnimatedSection";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
       <main>
         <Hero />
         <AnimatedSection delay={0}>
