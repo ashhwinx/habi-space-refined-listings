@@ -38,11 +38,12 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full transition-all duration-300 ease-out z-50 ${
+      className={`fixed top-0 left-0 right-0 w-full transition-all duration-300 ease-out z-[100] ${
         isScrolled
           ? "bg-background/95 backdrop-blur-lg border-b border-border/60 shadow-elegant"
           : "bg-background/80 backdrop-blur-md border-b border-border/50"
       }`}
+      style={{ position: "fixed" }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex items-center justify-between h-16">
