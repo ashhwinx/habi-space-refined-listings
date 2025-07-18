@@ -135,6 +135,11 @@ All colors MUST be HSL.
     backface-visibility: hidden;
   }
 
+  /* Prevent navbar from causing layout shifts */
+  body {
+    padding-top: 0; /* Remove any default padding */
+  }
+
   /* Ensure smooth animations on all devices */
   @media (prefers-reduced-motion: no-preference) {
     * {
@@ -143,6 +148,15 @@ All colors MUST be HSL.
         stroke, opacity, box-shadow, transform, filter, backdrop-filter;
       transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
+  }
+
+  /* Ensure navbar stays fixed and doesn't interfere with page flow */
+  nav[style*="position: fixed"] {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
   }
 }
 
